@@ -1,0 +1,19 @@
+/*general styles for counter project*/
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin-top: 50px;
+}
+#count {
+    margin: 20px;
+    color:blue;
+    border: 2px solid black;
+    display: inline-block;
+    width: 100px;
+}
+button {
+    font-size: 18px;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+}
