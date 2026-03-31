@@ -5,7 +5,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Predavanje 6</title>
 </head>
+<style>
+    .can-drive {
+        color: green;
+    }
+    .cannot-drive {
+        color: red;
+    }
+
+</style>
+
 <body>
-    
+    <p id="demo">Hello</p>
+
+    <p id="cars-demo"></p>
+
+    <p id="person-demo"></p>
+    <script>
+        const person = {
+            firstName: "John",
+            lastName: "Doe",
+            age: 30,            city: "New York"  
+        };  
+
+        document.getElementById("demo").innerHTML = person.firstName + " " + person.lastName + " is " + person.age + " years old and lives in " + person.city + ".";
+        
+        const jsonString = JSON.stringify(person);
+        document.getElementById("demo").innerHTML += jsonString;
+
+        const cars =[
+            { make: "Toyota", model: "Camry", year: 2020 },
+            { make: "Honda", model: "Civic", year: 2019 },
+            { make: "Ford", model: "Mustang", year: 2021 }
+        ];
+
+        let text = "";
+        for (let i = 0; i < cars.length; i++) {
+            text += cars[i].make + " " + cars[i].model + " (" + cars[i].year + ")<br>";
+        }
+        document.getElementById("cars-demo").innerHTML = "<br>Cars:<br>" + text;
+
+        let age = 17;
+        let canDrive = (age >= 18) ? "Yes" : "No";
+
+        if (canDrive == "Yes") {
+            // change the color of the text to green
+            document.getElementById("person-demo").className = "can-drive";
+            permission = "You can drive.";
+        } 
+        else {
+            // change the color of the text to red
+            document.getElementById("person-demo").className = "cannot-drive";
+
+            permission = "You cannot drive.";
+        }
+        document.getElementById("person-demo").innerHTML = permission;
+
+    </script>
 </body>
 </html>
